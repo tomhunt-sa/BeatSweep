@@ -64,13 +64,16 @@ public class Grid : MonoBehaviour
 
     public void UpdateMinesAtNode( Node node )
     {
+
+        if (node.hasMine) return;
+
         int numMines = 0;
         int searchArea = 3;
         int offset = (searchArea - 1) / 2;
 
-        for (int x = node.gridX - offset; x < node.gridX + searchArea; x++)
+        for (int x = node.gridX - offset; x < (node.gridX - offset) + searchArea; x++)
         {
-            for (int y = node.gridY - offset; y < node.gridY + searchArea; y++)
+            for (int y = node.gridY - offset; y < (node.gridY - offset) + searchArea; y++)
             {
                 if( x > 0 && x < gridSizeX && y > 0 && y < gridSizeY )
                 {
@@ -83,8 +86,7 @@ public class Grid : MonoBehaviour
                                
             }
         }
-
-        Debug.Log(numMines);
+        
         node.numConnectedMines = numMines;
         
     }

@@ -64,6 +64,7 @@ public class GameRunner : MonoBehaviour
                 }
 
                 tilesList.Add(msTile);
+                msTile.InitTileView();
 
             }
         }

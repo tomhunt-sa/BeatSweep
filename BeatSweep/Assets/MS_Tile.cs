@@ -19,8 +19,10 @@ public class MS_Tile : MonoBehaviour
     public GameObject[] ConnectedMineCounterList;
 
 
-    private void Start()
+    public void InitTileView()
     {
+
+        Debug.Log("Start");
 
         StartZoneTileGameObject.SetActive(false);
         EndZoneTileGameObject.SetActive(false);
@@ -39,23 +41,28 @@ public class MS_Tile : MonoBehaviour
             ClosedTileGameObject.SetActive(true);
         }
 
-        if( node.hasMine )
-        {
-            MineGameObject.SetActive(true);
-        }
-
-
     }
 
 
     public void UpdateTileView()
     {
+
+        Debug.Log("Update");
         foreach (var item in ConnectedMineCounterList)
         {
             item.SetActive(false);
         }
 
-        ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
+        if (node.hasMine)
+        {
+            MineGameObject.SetActive(true);
+            return;
+        } else
+        {
+            ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
+        }
+
+        
     }
 
 
