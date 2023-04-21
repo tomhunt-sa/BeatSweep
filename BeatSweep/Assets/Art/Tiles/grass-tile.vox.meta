@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 77fa05c5d7a2646b7b514a96556805c9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 389985119c505bd4b890a9a04aa373a2, type: 3}
+  ambientOcclusion:
+    enabled: 1
+    saturation: 0.2
+    value: -0.2
