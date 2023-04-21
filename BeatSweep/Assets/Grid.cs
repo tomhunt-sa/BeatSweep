@@ -73,7 +73,7 @@ public class Grid : MonoBehaviour
         {
             for (int y = node.gridY - offset; y < (node.gridY - offset) + searchArea; y++)
             {
-                if( x > 0 && x < gridSizeX && y > 0 && y < gridSizeY )
+                if( x >= 0 && x < gridSizeX && y >= 0 && y < gridSizeY )
                 {
                     Node nodeForInspection = grid[x, y];
                     if (nodeForInspection.hasMine)
@@ -94,16 +94,15 @@ public class Grid : MonoBehaviour
         
         node.isHidden = false;
         node.isInStartZone = false;
-
+        
 
         if (node.numConnectedMines == 0)
         {
-
             for (int x = node.gridX - offset; x < (node.gridX - offset) + searchArea; x++)
             {
                 for (int y = node.gridY - offset; y < (node.gridY - offset) + searchArea; y++)
                 {
-                    if (x > 0 && x < gridSizeX && y > 0 && y < gridSizeY)
+                    if (x >= 0 && x < gridSizeX && y >= 0 && y < gridSizeY)
                     {
                         Node nodeForInspection = grid[x, y];
                         if (nodeForInspection.numConnectedMines == 0)
