@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class TempoBar : MonoBehaviour
 {
-
     public Image bar;
     private RectTransform transform;
-
     //public Metronome metronome;
 
     private float startPosX;
@@ -23,6 +21,9 @@ public class TempoBar : MonoBehaviour
 
     public void SetScale( float scale )
     {
+        if (!transform)
+            return;
+        
         //float newWidth = startWidth * scale;        
         transform.sizeDelta = new Vector2(oldSizeDelta.x * scale, oldSizeDelta.y);
 

@@ -11,6 +11,9 @@ public class UIUpdater : MonoBehaviour
 
     public TMP_Text healthText;
     public TempoBar tempoBar;
+    
+    public SpriteStackProgress TempoSpriteStackProgress;
+
     public RectTransform tempoBarSafeArea;
 
 
@@ -29,6 +32,9 @@ public class UIUpdater : MonoBehaviour
     {
         healthText.text = gameState.playerHealth.ToString();
         tempoBar.SetScale( gameRunner.metronome.beatProgress );
+        
+        if (TempoSpriteStackProgress)
+            TempoSpriteStackProgress.SetValue(gameRunner.metronome.beatProgress);
 
 
         lastBeatHit.text = gameRunner.lastBeatHit.ToString();
