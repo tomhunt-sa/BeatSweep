@@ -144,6 +144,8 @@ GameObject:
   m_Component:
   - component: {fileID: 596375049}
   - component: {fileID: 596375048}
+  - component: {fileID: 596375051}
+  - component: {fileID: 596375050}
   m_Layer: 0
   m_Name: GameRunner
   m_TagString: Untagged
@@ -170,9 +172,10 @@ MonoBehaviour:
   beatMissDamage: 5
   mineHitDamage: 20
   chanceOfMine: 0.1
-  gameState: {fileID: 1347551045}
   tileGameobject: {fileID: 6202098652496452214, guid: 1df1cf35bae1b42f996b663722c2fbbe, type: 3}
   characterGameobject: {fileID: 458161445380722872, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
+  gameState: {fileID: 596375051}
+  metronome: {fileID: 596375050}
   tilesList: []
 --- !u!4 &596375049
 Transform:
@@ -189,6 +192,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &596375050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596375047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e013d209ce5144ae1850f6042927e334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bpm: 120
+--- !u!114 &596375051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596375047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740c4dfa1806f4e6db0baaebe11611ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
 --- !u!1001 &697558399
 PrefabInstance:
   m_ObjectHideFlags: 0

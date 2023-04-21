@@ -14,9 +14,13 @@ public class GameRunner : MonoBehaviour
 
     public float chanceOfMine;
 
-    public GameState gameState;
+    
     public MS_Tile tileGameobject;
     public MS_Character characterGameobject;
+
+    public GameState gameState;
+    public Metronome metronome;
+
 
     public List<MS_Tile> tilesList;
 
