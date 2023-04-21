@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5688693410741820384}
   - component: {fileID: 4392661521472284751}
-  - component: {fileID: 4119419388125020869}
   - component: {fileID: 907547563686720511}
   m_Layer: 0
   m_Name: grass-tile
@@ -41,20 +40,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8120675592072535244}
-  m_Mesh: {fileID: 4300000, guid: 07d4f08874b2144748710f0e7253ea87, type: 2}
---- !u!64 &4119419388125020869
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8120675592072535244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 07d4f08874b2144748710f0e7253ea87, type: 2}
 --- !u!23 &907547563686720511
 MeshRenderer:
