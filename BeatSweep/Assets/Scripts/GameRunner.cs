@@ -6,6 +6,7 @@ public class GameRunner : MonoBehaviour
 {
 
     public Grid grid;
+    public AStar pathfinder;
     public int startZoneSize;
     public int endZoneSize;
     public int startingHealth;
@@ -40,7 +41,6 @@ public class GameRunner : MonoBehaviour
 
         gameState.playerHealth = startingHealth;
 
-
     }
 
 
@@ -54,6 +54,7 @@ public class GameRunner : MonoBehaviour
 
                 GameObject tile = Instantiate(tileGameobject.gameObject);
                 tile.transform.position = new Vector3(x, 0, y);
+                tile.name = string.Format("x:{0} y:{1}", x, y);
 
                 MS_Tile msTile = tile.GetComponent<MS_Tile>();
                 Node node = grid.grid[x, y];
@@ -116,6 +117,9 @@ public class GameRunner : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
+
+                    ResetTiles();
+
                     MS_Tile tile = hit.collider.gameObject.GetComponent<MS_Tile>();
                     Node node = tile.node;
 
@@ -136,7 +140,23 @@ public class GameRunner : MonoBehaviour
 
                     lastBeatHit = metronome.beatCount + 1;
 
+
+                    Node furthestNode = grid.GetFurthestReachableNode();
+
+                    Node[] path = pathfinder.FindPath(node, furthestNode);
+                    if(path != null)
+                    {
+                        foreach (var pathnode in path)
+                        {
+                            pathnode.isPathfinderTarget = true;
+                        }
+                    }
+                    
+
                     UpdateGridView();
+
+
+                    
                 }
             }
         }
@@ -158,13 +178,22 @@ public class GameRunner : MonoBehaviour
     void HitMine(Node node)
     {
         gameState.takeDamage(mineHitDamage);
-        Debug.Log(string.Format("Hit Mine! Health is now {0} after taking {1} damage!", gameState.playerHealth, mineHitDamage));
+        //Debug.Log(string.Format("Hit Mine! Health is now {0} after taking {1} damage!", gameState.playerHealth, mineHitDamage));
     }
 
     void MissBeat()
     {
         gameState.takeDamage(beatMissDamage);
-        Debug.Log(string.Format("Missed a beat! Health is now {0} after taking {1} damage!", gameState.playerHealth, beatMissDamage));
+        //Debug.Log(string.Format("Missed a beat! Health is now {0} after taking {1} damage!", gameState.playerHealth, beatMissDamage));
     }
 
+
+    private void ResetTiles()
+    {
+        foreach (var tile in tilesList)
+        {
+            Node node = tile.node;
+            node.isPathfinderTarget = false;
+        }
+    }
 }

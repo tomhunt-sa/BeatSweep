@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Node
 {
-    public bool walkable;
+    public bool walkable {
+        get {
+            return isHidden;
+        }        
+    }
+
     public Vector3 worldPosition;
     public int gridX;
     public int gridY;
@@ -19,9 +24,10 @@ public class Node
 
     public bool isOnBoundary = false;
 
+    public bool isPathfinderTarget = false;
+
     public Node(bool walkable, int gridX, int gridY)
-    {
-        this.walkable = walkable;
+    {        
         //this.worldPosition = worldPosition;
         this.gridX = gridX;
         this.gridY = gridY;

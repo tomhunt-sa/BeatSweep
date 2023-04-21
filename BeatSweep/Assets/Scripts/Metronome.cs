@@ -37,7 +37,6 @@ public class Metronome : MonoBehaviour
             isStartOfBeat = false;
         }
             
-
         lastBeatProgress = beatProgress;
     }
 }

@@ -10,7 +10,7 @@ public class Grid : MonoBehaviour
 
 
     public Node[,] grid;
-    //public List<Node> path;
+    public List<Node> path;
 
     private float nodeDiameter;
 
@@ -124,34 +124,54 @@ public class Grid : MonoBehaviour
     }
 
 
+    public Node GetFurthestReachableNode()
+    {
+
+        for (int y = gridSizeY-1; y >= 0; y--)
+        {
+            for (int x = gridSizeX-1; x >= 0; x--)
+            {
+                Node nodeForInspection = grid[x, y];
+                if (!nodeForInspection.isHidden)
+                {
+
+             
+                    //Debug.Log(string.Format("{0} {1}", x, y));
+                    //nodeForInspection.isPathfinderTarget = true;
+                    return nodeForInspection;
+                }
+            }
+        }
+        Debug.Log(string.Format("Could not find a tile"));
+        return null;
+    }
 
 
+    public List<Node> GetNeighbors(Node node)
+    {
+        List<Node> neighbors = new List<Node>();
 
-    //public List<Node> GetNeighbors(Node node)
-    //{
-    //    List<Node> neighbors = new List<Node>();
+        for (int x = -1; x <= 1; x++)
+        {
+            for (int y = -1; y <= 1; y++)
+            {
+                if (x == 0 && y == 0)
+                {
+                    continue;
+                }
 
-    //    for (int x = -1; x <= 1; x++)
-    //    {
-    //        for (int y = -1; y <= 1; y++)
-    //        {
-    //            if (x == 0 && y == 0)
-    //            {
-    //                continue;
-    //            }
+                int checkX = node.gridX + x;
+                int checkY = node.gridY + y;
 
-    //            int checkX = node.gridX + x;
-    //            int checkY = node.gridY + y;
+                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+                {
+                    neighbors.Add(grid[checkX, checkY]);
+                }
+            }
+        }
 
-    //            if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
-    //            {
-    //                neighbors.Add(grid[checkX, checkY]);
-    //            }
-    //        }
-    //    }
-
-    //    return neighbors;
-    //}
+        return neighbors;
+    }
 
     //public Node NodeFromWorldPoint(Vector3 worldPosition)
     //{
