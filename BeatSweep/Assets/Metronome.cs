@@ -8,18 +8,18 @@ public class Metronome : MonoBehaviour
     public int bpm;
 
 
-    private float beatProgress = 0.0;
-    private float msPerBeat;
+    public float beatProgress = 0.0f;
+    private float secondsPerBeat;
 
     // Start is called before the first frame update
     void Awake()
     {
-        msPerBeat = 60000 / bpm;
+        secondsPerBeat = 60.0f / bpm;
     }
 
     // Update is called once per frame
     void Update()
     {
-        int ms = 
+        beatProgress = (Time.time * secondsPerBeat * 4) % 1;        
     }
 }

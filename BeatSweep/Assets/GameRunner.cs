@@ -54,22 +54,26 @@ public class GameRunner : MonoBehaviour
                 tile.transform.position = new Vector3(x, 0, y);
 
                 MS_Tile msTile = tile.GetComponent<MS_Tile>();
-                msTile.node = grid.grid[x, y];
+                Node node = grid.grid[x, y];
+                msTile.node = node;
 
                 if( y < startZoneSize )
                 {
-                    msTile.node.isInStartZone = true;
+                    node.isInStartZone = true;
                 }
 
                 if (y > grid.gridSizeY - endZoneSize)
                 {
-                    msTile.node.isInEndZone = true;
+                    node.isInEndZone = true;
                 }
 
                 float r = Random.value;
                 if( r <= chanceOfMine )
                 {
-                    msTile.node.hasMine = true;
+                    if( !node.isInEndZone && !node.isInStartZone)
+                    {
+                        node.hasMine = true;
+                    }                    
                 }
 
                 tilesList.Add(msTile);
