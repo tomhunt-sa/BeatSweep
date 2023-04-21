@@ -103,10 +103,23 @@ public class GameRunner : MonoBehaviour
                 {
                     MS_Tile tile = hit.collider.gameObject.GetComponent<MS_Tile>();
                     Node node = tile.node;
-                    grid.UpdateHiddenStateAtNode(node);
+
+                    if( node.hasMine )
+                    {
+                        node.mineIsVisible = true;
+                    } else
+                    {
+                        grid.UpdateHiddenStateAtNode(node);                        
+                    }
+
                     UpdateGridView();
                 }
             }
         }
+    }
+
+    void HitMine(Node node)
+    {
+
     }
 }

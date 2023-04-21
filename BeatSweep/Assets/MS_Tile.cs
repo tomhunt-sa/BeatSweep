@@ -53,7 +53,7 @@ public class MS_Tile : MonoBehaviour
             item.SetActive(false);
         }
 
-        if (node.hasMine)
+        if (node.hasMine && node.mineIsVisible)
         {
             MineGameObject.SetActive(true);
             return;
@@ -62,7 +62,7 @@ public class MS_Tile : MonoBehaviour
             
         }
 
-        if( ! node.isInStartZone )
+        if( !node.isInStartZone && !node.isInEndZone )
         {
             if (node.isHidden == false)
             {
