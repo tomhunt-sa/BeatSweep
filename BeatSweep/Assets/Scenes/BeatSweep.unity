@@ -166,7 +166,7 @@ MonoBehaviour:
   grid: {fileID: 243462948}
   startZoneSize: 5
   endZoneSize: 5
-  chanceOfMine: 0.2
+  chanceOfMine: 0.1
   TileGameobject: {fileID: 6202098652496452214, guid: 1df1cf35bae1b42f996b663722c2fbbe, type: 3}
   CharacterGameobject: {fileID: 458161445380722872, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
   tilesList: []
@@ -355,14 +355,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.18822327, y: 0, z: 0, w: 0.9821263}
-  m_LocalPosition: {x: 4.41, y: 7.95, z: -10}
+  m_LocalRotation: {x: 0.49674106, y: 0, z: 0, w: 0.8678988}
+  m_LocalPosition: {x: 4.41, y: 19.2, z: -0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 59.569, y: 0, z: 0}
 --- !u!1001 &2800437434055483612
 PrefabInstance:
   m_ObjectHideFlags: 0

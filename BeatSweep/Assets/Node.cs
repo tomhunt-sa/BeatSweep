@@ -16,6 +16,8 @@ public class Node
     public int numConnectedMines = 0;    
     public bool isHidden = true;
 
+    public bool isOnBoundary = false;
+
     public Node(bool walkable, int gridX, int gridY)
     {
         this.walkable = walkable;

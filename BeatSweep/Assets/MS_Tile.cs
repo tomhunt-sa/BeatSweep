@@ -55,8 +55,8 @@ public class MS_Tile : MonoBehaviour
 
         if (node.hasMine)
         {
-            //MineGameObject.SetActive(true);
-            //return;
+            MineGameObject.SetActive(true);
+            return;
         } else
         {
             
@@ -68,19 +68,24 @@ public class MS_Tile : MonoBehaviour
             {
                 ClosedTileGameObject.SetActive(false);
                 OpenTileGameObject.SetActive(true);
+                ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
             }
             else
             {
                 ClosedTileGameObject.SetActive(true);
-                OpenTileGameObject.SetActive(false);
-
-                ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
+                OpenTileGameObject.SetActive(false);                
             }
+        }
+
+        if( node.isOnBoundary )
+        {
+            
         }
         
 
 
-        
+
+
     }
 
 

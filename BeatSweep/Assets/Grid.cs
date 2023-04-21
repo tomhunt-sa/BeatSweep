@@ -109,7 +109,7 @@ public class Grid : MonoBehaviour
                         {
                             if (nodeForInspection.isHidden)
                             {
-                                UpdateHiddenStateAtNode(nodeForInspection);
+                                UpdateHiddenStateAtNode(nodeForInspection);                                
                             }
 
                         }
@@ -117,8 +117,13 @@ public class Grid : MonoBehaviour
 
                 }
             }
+        } else
+        {
+            node.isOnBoundary = true;
         }
     }
+
+
 
 
 
