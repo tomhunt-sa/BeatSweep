@@ -9,31 +9,23 @@ public class TempoBar : MonoBehaviour
     public Image bar;
     private RectTransform transform;
 
-    public Metronome metronome;
+    //public Metronome metronome;
 
     private float startPosX;
-    private float startWidth;
+    private Vector2 oldSizeDelta;
     
     void Awake()
     {
         transform = bar.rectTransform;
 
-        startPosX = transform.rect.position.x;
-        startWidth = transform.rect.width;
+        oldSizeDelta = transform.sizeDelta;
     }
 
-    private void Update()
+    public void SetScale( float scale )
     {
-        float scale = metronome.beatProgress;
-        ScaleFromLeft(scale);
+        //float newWidth = startWidth * scale;        
+        transform.sizeDelta = new Vector2(oldSizeDelta.x * scale, oldSizeDelta.y);
 
-    }
-
-    private void ScaleFromLeft( float scale )
-    {
-        float newWidth = startWidth * scale;
-        Vector2 oldSizeDelta = transform.sizeDelta;
-        transform.sizeDelta = new Vector2(newWidth, oldSizeDelta.y);
     }
 
 }

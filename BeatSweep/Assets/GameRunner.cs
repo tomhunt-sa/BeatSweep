@@ -11,6 +11,7 @@ public class GameRunner : MonoBehaviour
     public int startingHealth;
     public int beatMissDamage;
     public int mineHitDamage;
+    public float beatTolerance;
 
     public float chanceOfMine;
 
@@ -126,6 +127,12 @@ public class GameRunner : MonoBehaviour
                         grid.UpdateHiddenStateAtNode(node);                        
                     }
 
+                    bool hitBeat = metronome.beatProgress > 1.0 - beatTolerance;
+                    if( !hitBeat )
+                    {
+                        MissBeat();
+                    }
+
                     UpdateGridView();
                 }
             }
@@ -137,4 +144,11 @@ public class GameRunner : MonoBehaviour
         gameState.takeDamage(mineHitDamage);
         Debug.Log(string.Format("Hit Mine! Health is now {0} after taking {1} damage!", gameState.playerHealth, mineHitDamage));
     }
+
+    void MissBeat()
+    {
+        gameState.takeDamage(beatMissDamage);
+        Debug.Log(string.Format("Missed a beat! Health is now {0} after taking {1} damage!", gameState.playerHealth, beatMissDamage));
+    }
+
 }
