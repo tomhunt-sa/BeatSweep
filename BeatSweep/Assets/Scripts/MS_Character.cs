@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MS_Character : MonoBehaviour
 {
+
+    //public Grid grid;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +18,11 @@ public class MS_Character : MonoBehaviour
     {
         
     }
+
+    public void MoveToNode( Node node )
+    {
+
+    }
+
+
 }

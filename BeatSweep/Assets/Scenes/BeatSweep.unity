@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.006734194, g: 0.23395506, b: 0.9676802, a: 1}
+  m_IndirectSpecularColor: {r: 0.006731933, g: 0.23402259, b: 0.9679105, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -509,6 +509,7 @@ GameObject:
   - component: {fileID: 596375048}
   - component: {fileID: 596375051}
   - component: {fileID: 596375050}
+  - component: {fileID: 596375052}
   m_Layer: 0
   m_Name: GameRunner
   m_TagString: Untagged
@@ -529,13 +530,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 243462948}
+  pathfinder: {fileID: 596375052}
   startZoneSize: 5
   endZoneSize: 5
   startingHealth: 100
   beatMissDamage: 5
   mineHitDamage: 20
   beatTolerance: 1
-  chanceOfMine: 0.1
+  chanceOfMine: 0.2
   tileGameobject: {fileID: 6202098652496452214, guid: 1df1cf35bae1b42f996b663722c2fbbe, type: 3}
   characterGameobject: {fileID: 458161445380722872, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
   gameState: {fileID: 596375051}
@@ -636,15 +638,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458161445380722871, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.019395828
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 458161445380722871, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000020980835
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 458161445380722871, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0197494
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 458161445380722871, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -830,7 +832,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835422487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b964665a9fbd3422aae928203bbac0af, type: 3}
   m_Name: 

@@ -16,6 +16,8 @@ public class MS_Tile : MonoBehaviour
 
     public GameObject MineGameObject;
 
+    public GameObject PFTargetGameObject;
+
     public GameObject[] ConnectedMineCounterList;
 
 
@@ -77,10 +79,9 @@ public class MS_Tile : MonoBehaviour
             }
         }
 
-        if( node.isOnBoundary )
-        {
-            
-        }
+        
+        PFTargetGameObject.SetActive(node.isPathfinderTarget);
+        
         
 
 
