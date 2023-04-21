@@ -652,6 +652,10 @@ MonoBehaviour:
   tempoBar: {fileID: 1350358564}
   TempoSpriteStackProgress: {fileID: 802973763}
   tempoBarSafeArea: {fileID: 1910981568}
+  beatPulseObject: {fileID: 320341695}
+  pulsePunchTrigger: 0.9
+  pulsePunchScale: {x: 0.05, y: 0.5, z: 1}
+  pulsePunchDuration: 0.2
   lastBeatHit: {fileID: 962102688}
   currentBeat: {fileID: 450611784}
 --- !u!114 &835422489
