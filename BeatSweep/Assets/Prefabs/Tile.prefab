@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6919183753520218117}
   - component: {fileID: 1686024667286924331}
   - component: {fileID: 5756636649927587161}
-  - component: {fileID: 4829157678993141421}
   m_Layer: 0
   m_Name: ClosedTile
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4829157678993141421
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44585489926773891}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &666344580469281549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1377,6 @@ GameObject:
   - component: {fileID: 3500709161404036140}
   - component: {fileID: 778337440852445351}
   - component: {fileID: 5605653431489103257}
-  - component: {fileID: 7952225441778132788}
   m_Layer: 0
   m_Name: EndZoneTile
   m_TagString: Untagged
@@ -1464,19 +1449,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7952225441778132788
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4958662959823375330}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4982647827617932725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1460,6 @@ GameObject:
   - component: {fileID: 2460875382071156063}
   - component: {fileID: 4776955824246249906}
   - component: {fileID: 6274656541066527097}
-  - component: {fileID: 3623778606940472131}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
@@ -1561,19 +1532,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3623778606940472131
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982647827617932725}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6150262636204117763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,7 +1543,6 @@ GameObject:
   - component: {fileID: 7522363497940901454}
   - component: {fileID: 217335643827983145}
   - component: {fileID: 1847308517119724443}
-  - component: {fileID: 3734408644185700648}
   m_Layer: 0
   m_Name: StartZoneTile
   m_TagString: Untagged
@@ -1658,19 +1615,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3734408644185700648
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6150262636204117763}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6964280609210377067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1798,6 @@ GameObject:
   - component: {fileID: 1702882848790218674}
   - component: {fileID: 7954074958995790572}
   - component: {fileID: 5055806579062036651}
-  - component: {fileID: 352266673893272486}
   m_Layer: 0
   m_Name: OpenTile
   m_TagString: Untagged
@@ -1927,19 +1870,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &352266673893272486
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7383934562728421303}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7611657070507416563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,6 +1880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6048529715680386046}
   - component: {fileID: 6202098652496452214}
+  - component: {fileID: 1888153834634129791}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -2000,6 +1931,19 @@ MonoBehaviour:
   - {fileID: 1215633172995648781}
   - {fileID: 3440693753827770890}
   - {fileID: 7746310532237927644}
+--- !u!65 &1888153834634129791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611657070507416563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7746310532237927644
 GameObject:
   m_ObjectHideFlags: 0

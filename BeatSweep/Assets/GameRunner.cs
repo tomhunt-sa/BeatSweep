@@ -26,7 +26,7 @@ public class GameRunner : MonoBehaviour
         grid.CreateGrid();
         PopulateGrid();
 
-        UpdateGrid();
+        //UpdateGrid();
 
 
 
@@ -75,7 +75,7 @@ public class GameRunner : MonoBehaviour
     
 
 
-    void UpdateGrid()
+    void UpdateGridView()
     {
         grid.UpdateMineNumbers();
         foreach (var tile in tilesList)
@@ -103,6 +103,7 @@ public class GameRunner : MonoBehaviour
                     MS_Tile tile = hit.collider.gameObject.GetComponent<MS_Tile>();
                     Node node = tile.node;
                     grid.UpdateHiddenStateAtNode(node);
+                    UpdateGridView();
                 }
             }
         }

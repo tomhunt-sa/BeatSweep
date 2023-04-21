@@ -102,6 +102,7 @@ public class Grid : MonoBehaviour
                     if (nodeForInspection.numConnectedMines == 0)
                     {
                         node.isHidden = false;
+                        node.isInStartZone = false;
                     }
                 }
 
