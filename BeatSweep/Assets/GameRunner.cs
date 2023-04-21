@@ -134,13 +134,25 @@ public class GameRunner : MonoBehaviour
                         MissBeat();
                     } 
 
-                    lastBeatHit = metronome.beatCount;
-                    
+                    lastBeatHit = metronome.beatCount + 1;
 
                     UpdateGridView();
                 }
             }
         }
+
+        if( metronome.isStartOfBeat )
+        {
+            int beatDiff = Mathf.Abs(metronome.beatCount - lastBeatHit);
+            if ( beatDiff > 0 )
+            {
+                MissBeat();
+                //Debug.Log(string.Format("Last beat: {0} | Current beat: {1} | beatDiff: {2}", lastBeatHit, metronome.beatCount, beatDiff));
+                lastBeatHit = metronome.beatCount;
+            }
+        }
+
+
     }
 
     void HitMine(Node node)

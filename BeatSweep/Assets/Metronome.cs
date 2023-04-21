@@ -15,6 +15,9 @@ public class Metronome : MonoBehaviour
 
     public int beatCount = 0;
 
+
+    public bool isStartOfBeat = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,10 +27,14 @@ public class Metronome : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        beatProgress = (Time.time * secondsPerBeat * 4) % 1;
+        beatProgress = (Time.time / secondsPerBeat) % 1.0f;
         if( beatProgress < lastBeatProgress )
         {
             beatCount++;
+            isStartOfBeat = true;
+        } else
+        {
+            isStartOfBeat = false;
         }
             
 

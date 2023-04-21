@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &450611783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   startingHealth: 100
   beatMissDamage: 5
   mineHitDamage: 20
-  beatTolerance: 0.3
+  beatTolerance: 1
   chanceOfMine: 0.1
   tileGameobject: {fileID: 6202098652496452214, guid: 1df1cf35bae1b42f996b663722c2fbbe, type: 3}
   characterGameobject: {fileID: 458161445380722872, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
@@ -341,9 +341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e013d209ce5144ae1850f6042927e334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 120
+  bpm: 60
   beatProgress: 0
   beatCount: 0
+  isStartOfBeat: 0
 --- !u!114 &596375051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,7 +720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &962102687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1104,7 +1105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1725912830
 MonoBehaviour:
   m_ObjectHideFlags: 0
