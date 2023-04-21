@@ -62,6 +62,17 @@ public class MS_Tile : MonoBehaviour
             ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
         }
 
+        if( node.isHidden == false )
+        {
+            ClosedTileGameObject.SetActive(false);
+            OpenTileGameObject.SetActive(true);
+        } else
+        {
+            ClosedTileGameObject.SetActive(true);
+            OpenTileGameObject.SetActive(false);
+        }
+
+
         
     }
 

@@ -91,6 +91,20 @@ public class GameRunner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider != null)
+                {
+                    MS_Tile tile = hit.collider.gameObject.GetComponent<MS_Tile>();
+                    Node node = tile.node;
+                    grid.UpdateHiddenStateAtNode(node);
+                }
+            }
+        }
     }
 }

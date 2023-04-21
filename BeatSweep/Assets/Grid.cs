@@ -13,15 +13,15 @@ public class Grid : MonoBehaviour
     //public List<Node> path;
 
     private float nodeDiameter;
-    
 
-    //private void Start()
-    //{
-    //    nodeDiameter = nodeRadius * 2;
-    //    gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
-    //    gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
-    //    CreateGrid();
-    //}
+    private int searchArea = 3;
+    private int offset;
+
+
+    private void Start()
+    {
+        offset = (searchArea - 1) / 2;
+    }
 
     public void CreateGrid()
     {
@@ -56,20 +56,18 @@ public class Grid : MonoBehaviour
         {
             for (int y = 0; y < gridSizeY; y++)
             {
-                UpdateMinesAtNode(grid[x, y]);
+                UpdateNumberOfConnectedMinesAtNode(grid[x, y]);
             }
         }
     }
 
 
-    public void UpdateMinesAtNode( Node node )
+    public void UpdateNumberOfConnectedMinesAtNode( Node node )
     {
 
         if (node.hasMine) return;
 
-        int numMines = 0;
-        int searchArea = 3;
-        int offset = (searchArea - 1) / 2;
+        int numMines = 0;        
 
         for (int x = node.gridX - offset; x < (node.gridX - offset) + searchArea; x++)
         {
@@ -89,6 +87,26 @@ public class Grid : MonoBehaviour
         
         node.numConnectedMines = numMines;
         
+    }
+
+    public void UpdateHiddenStateAtNode(Node node)
+    {
+
+        for (int x = node.gridX - offset; x < (node.gridX - offset) + searchArea; x++)
+        {
+            for (int y = node.gridY - offset; y < (node.gridY - offset) + searchArea; y++)
+            {
+                if (x > 0 && x < gridSizeX && y > 0 && y < gridSizeY)
+                {
+                    Node nodeForInspection = grid[x, y];
+                    if (nodeForInspection.numConnectedMines == 0)
+                    {
+                        node.isHidden = false;
+                    }
+                }
+
+            }
+        }
     }
 
 

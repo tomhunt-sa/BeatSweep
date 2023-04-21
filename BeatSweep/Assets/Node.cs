@@ -14,6 +14,7 @@ public class Node
     public bool isInStartZone = false;
     public bool isInEndZone = false;
     public int numConnectedMines = 0;
+    public bool isHidden = true;
 
     public Node(bool walkable, int gridX, int gridY)
     {
