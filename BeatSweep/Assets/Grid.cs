@@ -91,21 +91,32 @@ public class Grid : MonoBehaviour
 
     public void UpdateHiddenStateAtNode(Node node)
     {
+        
+        node.isHidden = false;
+        node.isInStartZone = false;
 
-        for (int x = node.gridX - offset; x < (node.gridX - offset) + searchArea; x++)
+
+        if (node.numConnectedMines == 0)
         {
-            for (int y = node.gridY - offset; y < (node.gridY - offset) + searchArea; y++)
-            {
-                if (x > 0 && x < gridSizeX && y > 0 && y < gridSizeY)
-                {
-                    Node nodeForInspection = grid[x, y];
-                    if (nodeForInspection.numConnectedMines == 0)
-                    {
-                        node.isHidden = false;
-                        node.isInStartZone = false;
-                    }
-                }
 
+            for (int x = node.gridX - offset; x < (node.gridX - offset) + searchArea; x++)
+            {
+                for (int y = node.gridY - offset; y < (node.gridY - offset) + searchArea; y++)
+                {
+                    if (x > 0 && x < gridSizeX && y > 0 && y < gridSizeY)
+                    {
+                        Node nodeForInspection = grid[x, y];
+                        if (nodeForInspection.numConnectedMines == 0)
+                        {
+                            if (nodeForInspection.isHidden)
+                            {
+                                UpdateHiddenStateAtNode(nodeForInspection);
+                            }
+
+                        }
+                    }
+
+                }
             }
         }
     }

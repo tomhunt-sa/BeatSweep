@@ -26,7 +26,7 @@ public class GameRunner : MonoBehaviour
         grid.CreateGrid();
         PopulateGrid();
 
-        //UpdateGrid();
+        UpdateGridView();
 
 
 
@@ -69,6 +69,8 @@ public class GameRunner : MonoBehaviour
             }
         }
 
+        grid.UpdateMineNumbers();
+
     }
 
 
@@ -76,8 +78,7 @@ public class GameRunner : MonoBehaviour
 
 
     void UpdateGridView()
-    {
-        grid.UpdateMineNumbers();
+    {        
         foreach (var tile in tilesList)
         {
             tile.UpdateTileView();

@@ -59,7 +59,7 @@ public class MS_Tile : MonoBehaviour
             //return;
         } else
         {
-            ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
+            
         }
 
         if( ! node.isInStartZone )
@@ -73,6 +73,8 @@ public class MS_Tile : MonoBehaviour
             {
                 ClosedTileGameObject.SetActive(true);
                 OpenTileGameObject.SetActive(false);
+
+                ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
             }
         }
         
