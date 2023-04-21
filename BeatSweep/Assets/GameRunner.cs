@@ -25,6 +25,7 @@ public class GameRunner : MonoBehaviour
 
     public List<MS_Tile> tilesList;
 
+    public int lastBeatHit;
 
     // Start is called before the first frame update
     void Start()
@@ -131,7 +132,10 @@ public class GameRunner : MonoBehaviour
                     if( !hitBeat )
                     {
                         MissBeat();
-                    }
+                    } 
+
+                    lastBeatHit = metronome.beatCount;
+                    
 
                     UpdateGridView();
                 }

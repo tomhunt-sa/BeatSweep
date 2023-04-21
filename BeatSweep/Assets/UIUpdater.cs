@@ -14,6 +14,10 @@ public class UIUpdater : MonoBehaviour
     public RectTransform tempoBarSafeArea;
 
 
+    public TMP_Text lastBeatHit;
+    public TMP_Text currentBeat;
+
+
     private void Awake()
     {
         Vector2 oldDelta = tempoBarSafeArea.sizeDelta;
@@ -25,5 +29,9 @@ public class UIUpdater : MonoBehaviour
     {
         healthText.text = gameState.playerHealth.ToString();
         tempoBar.SetScale( gameRunner.metronome.beatProgress );
+
+
+        lastBeatHit.text = gameRunner.lastBeatHit.ToString();
+        currentBeat.text = gameRunner.metronome.beatCount.ToString();
     }
 }
