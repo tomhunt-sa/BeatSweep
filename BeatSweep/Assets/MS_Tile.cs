@@ -22,7 +22,7 @@ public class MS_Tile : MonoBehaviour
     public void InitTileView()
     {
 
-        Debug.Log("Start");
+        
 
         StartZoneTileGameObject.SetActive(false);
         EndZoneTileGameObject.SetActive(false);
@@ -47,7 +47,7 @@ public class MS_Tile : MonoBehaviour
     public void UpdateTileView()
     {
 
-        Debug.Log("Update");
+        
         foreach (var item in ConnectedMineCounterList)
         {
             item.SetActive(false);

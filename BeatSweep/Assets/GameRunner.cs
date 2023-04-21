@@ -8,11 +8,15 @@ public class GameRunner : MonoBehaviour
     public Grid grid;
     public int startZoneSize;
     public int endZoneSize;
+    public int startingHealth;
+    public int beatMissDamage;
+    public int mineHitDamage;
 
     public float chanceOfMine;
 
-    public MS_Tile TileGameobject;
-    public MS_Character CharacterGameobject;
+    public GameState gameState;
+    public MS_Tile tileGameobject;
+    public MS_Character characterGameobject;
 
     public List<MS_Tile> tilesList;
 
@@ -28,6 +32,7 @@ public class GameRunner : MonoBehaviour
 
         UpdateGridView();
 
+        gameState.playerHealth = startingHealth;
 
 
     }
@@ -41,7 +46,7 @@ public class GameRunner : MonoBehaviour
             {
                 //Debug.Log( string.Format("{0}, {1}", x, y) );
 
-                GameObject tile = Instantiate(TileGameobject.gameObject);
+                GameObject tile = Instantiate(tileGameobject.gameObject);
                 tile.transform.position = new Vector3(x, 0, y);
 
                 MS_Tile msTile = tile.GetComponent<MS_Tile>();
@@ -107,6 +112,7 @@ public class GameRunner : MonoBehaviour
                     if( node.hasMine )
                     {
                         node.mineIsVisible = true;
+                        HitMine(node);
                     } else
                     {
                         grid.UpdateHiddenStateAtNode(node);                        
@@ -120,6 +126,7 @@ public class GameRunner : MonoBehaviour
 
     void HitMine(Node node)
     {
-
+        gameState.takeDamage(mineHitDamage);
+        Debug.Log(string.Format("Hit Mine! Health is now {0} after taking {1} damage!", gameState.playerHealth, mineHitDamage));
     }
 }
