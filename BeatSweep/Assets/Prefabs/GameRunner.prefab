@@ -55,7 +55,7 @@ MonoBehaviour:
   startZoneSize: 1
   endZoneSize: 1
   startingHealth: 100
-  beatMissDamage: 0
+  beatMissDamage: 2
   beatHitDamage: -5
   mineHitDamage: 20
   beatTolerance: 1
@@ -68,6 +68,7 @@ MonoBehaviour:
   tilesList: []
   lastBeatHit: 0
   hitBeatCount: 0
+  tilesContainer: {fileID: 0}
 --- !u!114 &1422943570100246729
 MonoBehaviour:
   m_ObjectHideFlags: 0
