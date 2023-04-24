@@ -20,7 +20,7 @@ public class Node
     public Node parent;
 
     public bool hasMine;
-    public bool mineIsVisible;
+    public bool mineIsVisible = false;
     public bool isInStartZone = false;
     public bool isInEndZone = false;
     public int numConnectedMines = 0;    
