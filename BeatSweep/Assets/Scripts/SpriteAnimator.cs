@@ -31,9 +31,10 @@ public class SpriteAnimator : MonoBehaviour
         while (timer > frameTick)
         {
             timer -= frameTick;
-            currentFrame = (currentFrame + 1) % Clip.Sprites.Length;
+            currentFrame++;
         }
 
+        currentFrame %= Clip.Sprites.Length;
         spriteRenderer.sprite = Clip.Sprites[currentFrame];
     }
 }

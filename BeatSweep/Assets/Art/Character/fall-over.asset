@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5075e539c892b49feb61b5c3b715f4ef, type: 3}
+  m_Name: fall-over
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: 21300000, guid: ee0285e871a1342a5a62e0391f6b722a, type: 3}

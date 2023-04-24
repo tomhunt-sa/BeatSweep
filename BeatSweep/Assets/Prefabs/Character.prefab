@@ -52,7 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47183ab6e4a7b4a3a937845b3023e426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAnimator: {fileID: 2355422886742516280}
   speed: 0
+  walkClip: {fileID: 11400000, guid: 4aac5e5cf558a40a098d9d04c27cf66f, type: 2}
+  fallOverClip: {fileID: 11400000, guid: 30200fc86017d44f2b95a85cf5d6b06c, type: 2}
 --- !u!1 &1141977407302463188
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172825189629318420}
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -218,7 +221,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 883d49abb8dd14e49b476442d1223420, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee0285e871a1342a5a62e0391f6b722a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
