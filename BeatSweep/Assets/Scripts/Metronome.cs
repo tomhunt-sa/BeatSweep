@@ -8,6 +8,7 @@ public class Metronome : MonoBehaviour
     public int bpm;
 
 
+
     public float beatProgress = 0.0f;
     private float secondsPerBeat;
 
