@@ -10,6 +10,7 @@ public class GameState : MonoBehaviour
     public void takeDamage( int amount )
     {
         playerHealth -= amount;
+        playerHealth = Mathf.Clamp(playerHealth, 0, 100);
     }
 
 }

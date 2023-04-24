@@ -63,9 +63,9 @@ public class MS_Tile : MonoBehaviour
         StartZoneTileGameObject.SetActive(node.isHidden && node.isInStartZone);
         EndZoneTileGameObject.SetActive(node.isHidden && node.isInEndZone);
 
-        PFTargetGameObject.SetActive(node.isPathfinderTarget);
+        //PFTargetGameObject.SetActive(node.isPathfinderTarget);
 
-        ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
+        ConnectedMineCounterList[node.numConnectedMines].SetActive( !node.isHidden );
 
 
 

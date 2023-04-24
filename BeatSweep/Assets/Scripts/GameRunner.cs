@@ -11,6 +11,7 @@ public class GameRunner : MonoBehaviour
     public int endZoneSize;
     public int startingHealth;
     public int beatMissDamage;
+    public int beatHitDamage;
     public int mineHitDamage;
     public float beatTolerance;
 
@@ -29,6 +30,7 @@ public class GameRunner : MonoBehaviour
     public List<MS_Tile> tilesList;
 
     public int lastBeatHit;
+    public int hitBeatCount;
 
     // Start is called before the first frame update
     void Start()
@@ -139,7 +141,10 @@ public class GameRunner : MonoBehaviour
                     if( !hitBeat )
                     {
                         MissBeat();
-                    } 
+                    } else
+                    {
+                        HitBeat();
+                    }
 
                     lastBeatHit = metronome.beatCount + 1;
 
@@ -195,8 +200,18 @@ public class GameRunner : MonoBehaviour
     {
         gameState.takeDamage(beatMissDamage);
         //Debug.Log(string.Format("Missed a beat! Health is now {0} after taking {1} damage!", gameState.playerHealth, beatMissDamage));
+        hitBeatCount = 0;
     }
 
+    void HitBeat()
+    {
+        hitBeatCount++;
+        if( hitBeatCount > 1 )
+        {
+            gameState.takeDamage(beatHitDamage);
+        }
+            
+    }
 
     private void ResetTiles()
     {
