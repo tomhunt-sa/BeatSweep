@@ -112,14 +112,13 @@ public class GameRunner : MonoBehaviour
     {
         Debug.Log("LOSE!!");
         StartCoroutine(ShowLoseDialog());
+        metronome.StopMetronome();
         sfx.PlayLoseSFX();
     }
 
     public IEnumerator ShowLoseDialog()
     {
-        yield return new WaitForSeconds(1);
-
-        metronome.StopMetronome();
+        yield return new WaitForSeconds(1);        
 
         gameState.playState = PlayState.hasLost;
 
