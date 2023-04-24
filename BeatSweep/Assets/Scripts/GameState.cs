@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,9 @@ public class GameState : MonoBehaviour
     public int playerHealth;
     public PlayState playState = PlayState.notStarted;
 
-    public void takeDamage( int amount )
+    public Action<bool> OnTakeDamage; 
+
+    public void takeDamage( int amount, bool fromMine )
     {
         playerHealth -= amount;
         playerHealth = Mathf.Clamp(playerHealth, 0, 100);
@@ -28,7 +31,8 @@ public class GameState : MonoBehaviour
         {
             playState = PlayState.isLosing;
         }
-
+        
+        OnTakeDamage?.Invoke(fromMine);
     }
 
 }
