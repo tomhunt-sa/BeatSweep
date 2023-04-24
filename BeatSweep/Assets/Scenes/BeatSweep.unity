@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.82909805, g: 0.0057914685, b: -0.14032365, a: 1}
+  m_IndirectSpecularColor: {r: 0.012565865, g: 0.86434984, b: -0.14032365, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1035,7 +1035,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 75ef3bae87478424c99c03e630b9d2d4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.467
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1212,9 +1212,17 @@ PrefabInstance:
       value: GameRunner
       objectReference: {fileID: 0}
     - target: {fileID: 1422943570100246728, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
+      propertyPath: bpm
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422943570100246728, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
       propertyPath: music
       value: 
       objectReference: {fileID: 761134077}
+    - target: {fileID: 1422943570100246728, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
+      propertyPath: musicIntroTime
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 1422943570100246730, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
       propertyPath: sfx
       value: 
