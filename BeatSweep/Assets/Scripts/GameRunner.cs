@@ -193,6 +193,7 @@ public class GameRunner : MonoBehaviour
     void HitMine(Node node)
     {
         gameState.takeDamage(mineHitDamage);
+        hitBeatCount = 0;
         //Debug.Log(string.Format("Hit Mine! Health is now {0} after taking {1} damage!", gameState.playerHealth, mineHitDamage));
     }
 
@@ -200,7 +201,7 @@ public class GameRunner : MonoBehaviour
     {
         gameState.takeDamage(beatMissDamage);
         //Debug.Log(string.Format("Missed a beat! Health is now {0} after taking {1} damage!", gameState.playerHealth, beatMissDamage));
-        hitBeatCount = 0;
+        hitBeatCount = 0;       
     }
 
     void HitBeat()
@@ -208,7 +209,7 @@ public class GameRunner : MonoBehaviour
         hitBeatCount++;
         if( hitBeatCount > 1 )
         {
-            gameState.takeDamage(beatHitDamage);
+            gameState.takeDamage(beatHitDamage );
         }
             
     }

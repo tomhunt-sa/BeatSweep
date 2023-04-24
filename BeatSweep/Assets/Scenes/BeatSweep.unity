@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5408971, g: 0.006657701, b: 0.9662337, a: 1}
+  m_IndirectSpecularColor: {r: 0.84368795, g: 1.1707717, b: 0.014453404, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1058,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameRunner
       objectReference: {fileID: 0}
+    - target: {fileID: 1422943570100246728, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
+      propertyPath: bpm
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1422943570100246730, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
       propertyPath: grid
       value: 
@@ -1070,6 +1074,10 @@ PrefabInstance:
       propertyPath: cameraMover
       value: 
       objectReference: {fileID: 2476715088500984342}
+    - target: {fileID: 1422943570100246730, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
+      propertyPath: chanceOfMine
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1422943570100246730, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
       propertyPath: beatHitDamage
       value: -5
@@ -1272,6 +1280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 442948531228757660, guid: 728b7334d290a4659923af5bb0abf93b, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4711250514085279374, guid: 728b7334d290a4659923af5bb0abf93b, type: 3}
       propertyPath: m_IsActive
       value: 0

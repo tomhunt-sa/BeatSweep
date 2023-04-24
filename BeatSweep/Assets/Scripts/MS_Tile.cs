@@ -65,7 +65,7 @@ public class MS_Tile : MonoBehaviour
 
         //PFTargetGameObject.SetActive(node.isPathfinderTarget);
 
-        ConnectedMineCounterList[node.numConnectedMines].SetActive( !node.isHidden );
+        ConnectedMineCounterList[node.numConnectedMines].SetActive( !node.isHidden);
 
 
 

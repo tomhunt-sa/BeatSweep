@@ -105,7 +105,7 @@ public class Grid : MonoBehaviour
                     if (x >= 0 && x < gridSizeX && y >= 0 && y < gridSizeY)
                     {
                         Node nodeForInspection = grid[x, y];
-                        if (nodeForInspection.numConnectedMines == 0)
+                        if (nodeForInspection.numConnectedMines >= 0 )
                         {
                             if (nodeForInspection.isHidden)
                             {
