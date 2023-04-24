@@ -69,6 +69,8 @@ MonoBehaviour:
   lastBeatHit: 0
   hitBeatCount: 0
   tilesContainer: {fileID: 0}
+  isLongPressing: 0
+  flagHoldTime: 1
 --- !u!114 &1422943570100246729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bpm: 60
+  music: {fileID: 8300000, guid: 75ef3bae87478424c99c03e630b9d2d4, type: 3}
   beatProgress: 0
   beatCount: 0
   isStartOfBeat: 0

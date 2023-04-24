@@ -94,6 +94,9 @@ public class GameRunner : MonoBehaviour
         cameraMover.SetPositionX(center);
 
         gameState.playState = PlayState.isPlaying;
+
+
+        metronome.StartMetronome();
     }
 
     public void WinGame()
@@ -114,12 +117,14 @@ public class GameRunner : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
+        metronome.StopMetronome();
+
         gameState.playState = PlayState.hasLost;
 
         ResetGame();
         Node currentNode = grid.NodeFromWorldPoint(character.GetPosition());
         int nodeY = currentNode.gridY;
-        int percent = (int)(((float)nodeY / (float)grid.gridSizeY) * 100);
+        int percent = (int)((((float)nodeY + 1) / (float)grid.gridSizeY) * 100);
 
         //Debug.Log(string.Format("{0} {1} {2}", nodeY, grid.gridSizeY, percent ));
 
