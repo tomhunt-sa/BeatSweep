@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class UIUpdater : MonoBehaviour
 {
-
     public GameRunner gameRunner;
     public GameState gameState;
 
@@ -29,6 +28,7 @@ public class UIUpdater : MonoBehaviour
     public TMP_Text lastBeatHit;
     public TMP_Text currentBeat;
 
+    public BeatEffectManager beatEffectManager;
 
     private void Awake()
     {
@@ -45,12 +45,17 @@ public class UIUpdater : MonoBehaviour
         healthText.text = gameState.playerHealth.ToString();
 
         if (healthSlider)
-            healthSlider.value = 1.0f - Mathf.Clamp01(gameState.playerHealth / 100.0f);
+            healthSlider.value = 1.0f - Mathf.Clamp01((float)gameState.playerHealth / gameRunner.startingHealth);
         
         tempoBar.SetScale( gameRunner.metronome.beatProgress );
 
         if (prevBeatProgress < pulsePunchTrigger && gameRunner.metronome.beatProgress >= pulsePunchTrigger)
         {
+            if (beatEffectManager)
+            {
+                beatEffectManager.HandleBeat();
+            }
+            
             if (beatPulseObject)
             {
                 beatPulseObject.DOPunchScale(pulsePunchScale, pulsePunchDuration);

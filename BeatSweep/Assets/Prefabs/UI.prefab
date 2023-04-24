@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2503268437881613393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 442948531228757660}
+  - component: {fileID: 3197756499664567761}
+  m_Layer: 5
+  m_Name: BeatSky
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &442948531228757660
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503268437881613393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4711250514908096879}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3197756499664567761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503268437881613393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b129ecef7d7a54c098494bf39c8f8934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: cbad05f666cdb400a9ec3ccd5141699b, type: 2}
 --- !u!1 &4711250513832043468
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +575,7 @@ GameObject:
   - component: {fileID: 4711250514908096873}
   - component: {fileID: 4711250514908096874}
   - component: {fileID: 4711250514908096875}
+  - component: {fileID: 5869469249716692385}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -553,6 +604,7 @@ RectTransform:
   - {fileID: 4711250515360049716}
   - {fileID: 6451271401727038217}
   - {fileID: 4711250515464988364}
+  - {fileID: 442948531228757660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -647,6 +699,21 @@ MonoBehaviour:
   pulsePunchDuration: 0.2
   lastBeatHit: {fileID: 4711250514764506579}
   currentBeat: {fileID: 4711250515360049723}
+  beatEffectManager: {fileID: 5869469249716692385}
+--- !u!114 &5869469249716692385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711250514908096868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e73dd0cce7a4167a7e8fe82afe3949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatColor: {r: 0.8584906, g: 0.34420612, b: 0.34420612, a: 1}
+  hueStep: 0.1
 --- !u!1 &4711250515360049717
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +936,7 @@ GameObject:
   - component: {fileID: 609009234008938555}
   - component: {fileID: 5650265481033927706}
   - component: {fileID: 9199069485080383494}
+  - component: {fileID: 7676429489448872079}
   m_Layer: 5
   m_Name: Background Fade
   m_TagString: Untagged
@@ -934,6 +1002,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7676429489448872079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850163579518293893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c0e84a570ec47b2abb91be7912f0b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1856906106055473365
 PrefabInstance:
   m_ObjectHideFlags: 0
