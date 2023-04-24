@@ -47,6 +47,8 @@ public class GameRunner : MonoBehaviour
 
     private MS_Tile lastTappedTile;
 
+    public SFXHelper sfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,6 +93,7 @@ public class GameRunner : MonoBehaviour
 
         float center = Mathf.Round(grid.gridSizeX / 2.0f) - 1;
         character.SetPosition(new Vector3(center, 0, 0));
+        cameraMover.Reset();
         cameraMover.SetPositionX(center);
 
         gameState.playState = PlayState.isPlaying;
@@ -108,9 +111,8 @@ public class GameRunner : MonoBehaviour
     public void LoseGame()
     {
         Debug.Log("LOSE!!");
-
         StartCoroutine(ShowLoseDialog());
-
+        sfx.PlayLoseSFX();
     }
 
     public IEnumerator ShowLoseDialog()
@@ -356,6 +358,7 @@ public class GameRunner : MonoBehaviour
     {
         gameState.takeDamage(mineHitDamage, true);
         hitBeatCount = 0;
+        sfx.PlayMineSFX();
         //Debug.Log(string.Format("Hit Mine! Health is now {0} after taking {1} damage!", gameState.playerHealth, mineHitDamage));
     }
 

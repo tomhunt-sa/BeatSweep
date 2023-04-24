@@ -81,7 +81,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorA: {r: 0.25733584, g: 0, b: 0.50980395, a: 1}
-    - _ColorB: {r: 0.75, g: 0.468, b: 0.045, a: 1}
+    - _ColorB: {r: 0.75, g: 0.045, b: 0.044999987, a: 1}
     - _DirA: {r: 1, g: 0, b: 0, a: 0}
     - _DirB: {r: 1, g: -9, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

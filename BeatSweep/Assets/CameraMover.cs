@@ -44,5 +44,11 @@ public class CameraMover : MonoBehaviour
         transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
     }
 
+    public void Reset()
+    {
+        transform.position = startPosition;
+        DOTween.Kill(gameObject);
+    }
+
 
 }
