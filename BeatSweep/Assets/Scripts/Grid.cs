@@ -93,7 +93,7 @@ public class Grid : MonoBehaviour
     {
         
         node.isHidden = false;
-        node.isInStartZone = false;
+        //node.isInStartZone = false;
         
 
         if (node.numConnectedMines == 0)
@@ -136,7 +136,7 @@ public class Grid : MonoBehaviour
                 {
 
              
-                    //Debug.Log(string.Format("{0} {1}", x, y));
+                    Debug.Log(string.Format("{0} {1}", x, y));
                     //nodeForInspection.isPathfinderTarget = true;
                     return nodeForInspection;
                 }
@@ -151,24 +151,26 @@ public class Grid : MonoBehaviour
     {
         List<Node> neighbors = new List<Node>();
 
-        for (int x = -1; x <= 1; x++)
-        {
-            for (int y = -1; y <= 1; y++)
-            {
-                if (x == 0 && y == 0)
-                {
-                    continue;
-                }
+        //for (int x = -1; x <= 1; x++)
+        //{
+        //    for (int y = -1; y <= 1; y++)
+        //    {
+        //        if (x == 0 && y == 0)
+        //        {
+        //            continue;
+        //        }
 
-                int checkX = node.gridX + x;
-                int checkY = node.gridY + y;
+        //        int checkX = node.gridX + x;
+        //        int checkY = node.gridY + y;
 
-                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
-                {
-                    neighbors.Add(grid[checkX, checkY]);
-                }
-            }
-        }
+        //        if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+        //        {
+        //            neighbors.Add(grid[checkX, checkY]);
+        //        }
+        //    }
+        //}
+
+        // only check a cross here!
 
         return neighbors;
     }

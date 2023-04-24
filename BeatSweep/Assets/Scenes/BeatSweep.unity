@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &320341695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -730,7 +730,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1560,6 +1560,10 @@ PrefabInstance:
     - target: {fileID: 1649688143449503145, guid: 74586eb2a0cfc4491bdd52626344cb12, type: 3}
       propertyPath: m_Name
       value: Logo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649688143449503145, guid: 74586eb2a0cfc4491bdd52626344cb12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4630416659526659036, guid: 74586eb2a0cfc4491bdd52626344cb12, type: 3}
       propertyPath: m_Pivot.x

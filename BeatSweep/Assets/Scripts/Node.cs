@@ -4,7 +4,7 @@ public class Node
 {
     public bool walkable {
         get {
-            return isHidden;
+            return !isHidden;
         }        
     }
 

@@ -55,36 +55,16 @@ public class MS_Tile : MonoBehaviour
             item.SetActive(false);
         }
 
-        if (node.hasMine && node.mineIsVisible)
-        {
-            MineGameObject.SetActive(true);
-            return;
-        } else
-        {
-            
-        }
+       
+        MineGameObject.SetActive( node.hasMine && node.mineIsVisible );
 
-        if( !node.isInStartZone && !node.isInEndZone )
-        {
-            if (node.isHidden == false)
-            {
-                ClosedTileGameObject.SetActive(false);
-                OpenTileGameObject.SetActive(true);
-                ConnectedMineCounterList[node.numConnectedMines].SetActive(true);
-            }
-            else
-            {
-                ClosedTileGameObject.SetActive(true);
-                OpenTileGameObject.SetActive(false);                
-            }
-        }
+        ClosedTileGameObject.SetActive( node.isHidden && !node.isInStartZone && !node.isInEndZone );
+        OpenTileGameObject.SetActive(!node.isHidden);
+        StartZoneTileGameObject.SetActive(node.isHidden && node.isInStartZone);
+        EndZoneTileGameObject.SetActive(node.isHidden && node.isInEndZone);
 
-        
+
         PFTargetGameObject.SetActive(node.isPathfinderTarget);
-        
-        
-
-
 
 
     }
