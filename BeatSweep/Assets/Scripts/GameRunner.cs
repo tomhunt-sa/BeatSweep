@@ -39,6 +39,14 @@ public class GameRunner : MonoBehaviour
 
     public GameObject tilesContainer;
 
+
+    public bool isLongPressing = false;
+    private float lastButtonPressTime;
+    public float flagHoldTime;
+
+
+    private MS_Tile lastTappedTile;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -118,8 +126,6 @@ public class GameRunner : MonoBehaviour
         loseDialog.gameObject.SetActive(true);
         loseDialog.SetPercentageComplete(percent);
 
-
-
     }
 
 
@@ -170,8 +176,6 @@ public class GameRunner : MonoBehaviour
     }
 
 
-    
-
 
     void UpdateGridView()
     {        
@@ -180,7 +184,73 @@ public class GameRunner : MonoBehaviour
             tile.UpdateTileView();
         }
     }
-    
+
+    void TileOnTapHandler( MS_Tile tile )
+    {
+
+        Debug.Log("TAPPED");
+        Node node = tile.node;
+
+        ResetTiles();
+        
+        if (node.hasMine)
+        {
+            node.mineIsVisible = true;
+            HitMine(node);
+        }
+        else
+        {
+            grid.UpdateHiddenStateAtNode(node);
+        }
+
+        bool hitBeat = metronome.beatProgress > 1.0 - beatTolerance;
+        if (!hitBeat)
+        {
+            MissBeat();
+        }
+        else
+        {
+            HitBeat();
+        }
+
+        lastBeatHit = metronome.beatCount + 1;
+
+
+        Node furthestNode = grid.GetFurthestReachableNode();
+        if (furthestNode != null)
+        {
+            furthestNode.isPathfinderTarget = true;
+        }
+
+        Node[] path = pathfinder.FindPath(grid.NodeFromWorldPoint(character.GetPosition()), furthestNode);
+
+        if (path != null)
+        {
+            foreach (var pathnode in path)
+            {
+                pathnode.isPathfinderTarget = true;
+            }
+        }
+
+        if (path != null)
+        {
+            character.WalkAlongPath(path);
+        }
+
+
+        UpdateGridView();
+    }
+
+    void TileOnHoldHandler( MS_Tile tile )
+    {
+        Debug.Log("FLAG");
+        Node node = tile.node;
+
+        node.isFlagged = true;
+        UpdateGridView();
+    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -203,6 +273,7 @@ public class GameRunner : MonoBehaviour
             return;
         }
 
+     
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -213,58 +284,40 @@ public class GameRunner : MonoBehaviour
                 if (hit.collider != null)
                 {
 
-                    ResetTiles();
-
                     MS_Tile tile = hit.collider.gameObject.GetComponent<MS_Tile>();
                     Node node = tile.node;
-
-                    if( node.hasMine )
+                    if( node.isHidden && !node.mineIsVisible)
                     {
-                        node.mineIsVisible = true;
-                        HitMine(node);
-                    } else
-                    {
-                        grid.UpdateHiddenStateAtNode(node);                        
+                        lastTappedTile = tile;
+                        lastButtonPressTime = Time.time;
+                        node.isPathfinderTarget = true;
                     }
-
-                    bool hitBeat = metronome.beatProgress > 1.0 - beatTolerance;
-                    if( !hitBeat )
-                    {
-                        MissBeat();
-                    } else
-                    {
-                        HitBeat();
-                    }
-
-                    lastBeatHit = metronome.beatCount + 1;
-
-
-                    Node furthestNode = grid.GetFurthestReachableNode();
-                    furthestNode.isPathfinderTarget = true;
-
-                    Node[] path = pathfinder.FindPath(grid.NodeFromWorldPoint( character.GetPosition() ), furthestNode);
-                    
-                    if(path != null)
-                    {
-                        foreach (var pathnode in path)
-                        {
-                            pathnode.isPathfinderTarget = true;
-                        }
-                    }
-
-                    if( path != null )
-                    {
-                        character.WalkAlongPath(path);
-                    }
-                    
-
-                    UpdateGridView();
-                    
                 }
             }
         }
 
-        if( metronome.isStartOfBeat )
+
+        float tapTime = Time.time - lastButtonPressTime;
+        if( tapTime >= flagHoldTime )
+        {
+            if( lastTappedTile != null )
+            {
+                TileOnHoldHandler(lastTappedTile);
+            }
+            lastTappedTile = null;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isLongPressing = false;
+            if(lastTappedTile != null)
+            {
+                TileOnTapHandler(lastTappedTile);
+            }            
+            lastTappedTile= null;
+        }      
+
+        if ( metronome.isStartOfBeat )
         {
             int beatDiff = Mathf.Abs(metronome.beatCount - lastBeatHit);
             if ( beatDiff > 0 )
@@ -279,6 +332,20 @@ public class GameRunner : MonoBehaviour
         cameraMover.MoveToNextScreen(character.GetPosition());
 
     }
+
+    //private void LateUpdate()
+    //{
+    //    if(gameState.playState == PlayState.isPlaying)
+    //    {
+    //        if (Input.GetMouseButtonDown(0))
+    //        {
+    //            //isLongPressing = true;
+    //            //lastButtonPressTime = Time.time;
+    //        }
+    //    }
+        
+    //}
+
 
     void HitMine(Node node)
     {

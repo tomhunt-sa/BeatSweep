@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: -0.029463988, g: 0.1444559, b: 0.7182394, a: 1}
+  m_IndirectSpecularColor: {r: 0.82909805, g: 0.0057914685, b: -0.14032365, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -959,6 +959,14 @@ PrefabInstance:
       propertyPath: cameraMover
       value: 
       objectReference: {fileID: 2476715088500984342}
+    - target: {fileID: 1422943570100246730, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
+      propertyPath: chanceOfMine
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422943570100246730, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
+      propertyPath: flagHoldTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1422943570100246730, guid: 5df73dddd63a2455d96f51a2f4b3ae2d, type: 3}
       propertyPath: splashDialog
       value: 
