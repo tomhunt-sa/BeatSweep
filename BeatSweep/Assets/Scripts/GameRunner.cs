@@ -53,7 +53,9 @@ public class GameRunner : MonoBehaviour
     public void StartGame()
     {
 
-        if(tilesContainer != null)
+        splashDialog.gameObject.SetActive(false);
+
+        if (tilesContainer != null)
         {
             foreach( Transform t in tilesContainer.transform )
             {

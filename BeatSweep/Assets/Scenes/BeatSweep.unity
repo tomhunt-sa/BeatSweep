@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: -0.029463988, g: 0.86434984, b: -0.0016591041, a: 1}
+  m_IndirectSpecularColor: {r: -0.029463988, g: 0.86434984, b: 0.7182394, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1302,10 +1302,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1177923653}
     m_Modifications:
+    - target: {fileID: 815912440823467829, guid: e335d0ad853b1437ebac9871d19f227e, type: 3}
+      propertyPath: gameRunner
+      value: 
+      objectReference: {fileID: 596375048}
+    - target: {fileID: 2234934024485605967, guid: e335d0ad853b1437ebac9871d19f227e, type: 3}
+      propertyPath: gameRunner
+      value: 
+      objectReference: {fileID: 596375048}
     - target: {fileID: 6795539985946320060, guid: e335d0ad853b1437ebac9871d19f227e, type: 3}
       propertyPath: m_Name
       value: Dialogs
       objectReference: {fileID: 0}
+    - target: {fileID: 8381385223588352272, guid: e335d0ad853b1437ebac9871d19f227e, type: 3}
+      propertyPath: gameRunner
+      value: 
+      objectReference: {fileID: 596375048}
     - target: {fileID: 8724905339194730603, guid: e335d0ad853b1437ebac9871d19f227e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
