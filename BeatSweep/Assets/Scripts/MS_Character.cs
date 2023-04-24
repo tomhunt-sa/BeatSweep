@@ -12,6 +12,7 @@ public class MS_Character : MonoBehaviour
 
     public float speed;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,8 @@ public class MS_Character : MonoBehaviour
 
     public void WalkAlongPath( Node[] path )
     {
+        DOTween.Kill(gameObject);
+
         Vector3[] waypoints = new Vector3[path.Length];
         for (int i = 0; i < path.Length; i++)
         {
@@ -38,6 +41,11 @@ public class MS_Character : MonoBehaviour
         }
 
         transform.DOPath(waypoints, speed * waypoints.Length, PathType.Linear);
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 
 

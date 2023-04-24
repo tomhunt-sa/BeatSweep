@@ -5,8 +5,8 @@ public class Grid : MonoBehaviour
 {
 
     public int gridSizeX, gridSizeY;
-    
 
+    public Vector2 gridWorldSize;
 
 
     public Node[,] grid;
@@ -174,17 +174,18 @@ public class Grid : MonoBehaviour
         return neighbors;
     }
 
-    //public Node NodeFromWorldPoint(Vector3 worldPosition)
-    //{
-    //    float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
-    //    float percentY = (worldPosition.z + gridWorldSize.y / 2) / gridWorldSize.y;
-    //    percentX = Mathf.Clamp01(percentX);
-    //    percentY = Mathf.Clamp01(percentY);
+    public Node NodeFromWorldPoint(Vector3 worldPosition)
+    {
+        //float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
+        //float percentY = (worldPosition.z + gridWorldSize.y / 2) / gridWorldSize.y;
+        //percentX = Mathf.Clamp01(percentX);
+        //percentY = Mathf.Clamp01(percentY);
 
-    //    int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
-    //    int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
-    //    return grid[x, y];
-    //}
+        int x = Mathf.RoundToInt( worldPosition.x );
+        int y = Mathf.RoundToInt(worldPosition.z);
+
+        return grid[x, y];
+    }
 
     //private void OnDrawGizmos()
     //{

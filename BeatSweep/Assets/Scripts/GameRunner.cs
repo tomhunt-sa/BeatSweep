@@ -144,7 +144,7 @@ public class GameRunner : MonoBehaviour
                     Node furthestNode = grid.GetFurthestReachableNode();
                     furthestNode.isPathfinderTarget = true;
 
-                    Node[] path = pathfinder.FindPath(grid.grid[0,0], furthestNode);
+                    Node[] path = pathfinder.FindPath(grid.NodeFromWorldPoint( character.GetPosition() ), furthestNode);
                     
                     if(path != null)
                     {
@@ -154,8 +154,11 @@ public class GameRunner : MonoBehaviour
                         }
                     }
 
-
-                    character.WalkAlongPath(path);
+                    if( path != null )
+                    {
+                        character.WalkAlongPath(path);
+                    }
+                    
 
                     UpdateGridView();
 
