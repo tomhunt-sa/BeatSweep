@@ -5,6 +5,11 @@ using UnityEngine;
 public class GameRunner : MonoBehaviour
 {
 
+    public SplashDialog splashDialog;
+    public WinDialog winDialog;
+    public LoseDialog loseDialog;
+
+
     public Grid grid;
     public Astar pathfinder;
     public int startZoneSize;

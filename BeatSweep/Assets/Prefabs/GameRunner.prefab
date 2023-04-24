@@ -47,12 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dac30bf882e64df0a4663ba5859efd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splashDialog: {fileID: 0}
+  winDialog: {fileID: 0}
+  loseDialog: {fileID: 0}
   grid: {fileID: 0}
   pathfinder: {fileID: 1422943570100246734}
   startZoneSize: 1
   endZoneSize: 1
   startingHealth: 100
-  beatMissDamage: 5
+  beatMissDamage: 0
+  beatHitDamage: -5
   mineHitDamage: 20
   beatTolerance: 1
   chanceOfMine: 0.2
@@ -63,6 +67,7 @@ MonoBehaviour:
   cameraMover: {fileID: 0}
   tilesList: []
   lastBeatHit: 0
+  hitBeatCount: 0
 --- !u!114 &1422943570100246729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 0
+  playState: 0
 --- !u!114 &1422943570100246728
 MonoBehaviour:
   m_ObjectHideFlags: 0
