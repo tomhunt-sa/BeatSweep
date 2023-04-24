@@ -97,6 +97,17 @@ public class GameRunner : MonoBehaviour
     public void LoseGame()
     {
         Debug.Log("LOSE!!");
+
+        StartCoroutine(ShowLoseDialog());
+
+    }
+
+    public IEnumerator ShowLoseDialog()
+    {
+        yield return new WaitForSeconds(1);
+
+        gameState.playState = PlayState.hasLost;
+
         ResetGame();
         Node currentNode = grid.NodeFromWorldPoint(character.GetPosition());
         int nodeY = currentNode.gridY;
@@ -106,8 +117,10 @@ public class GameRunner : MonoBehaviour
 
         loseDialog.gameObject.SetActive(true);
         loseDialog.SetPercentageComplete(percent);
-    }
 
+
+
+    }
 
 
     void PopulateGrid( GameObject container )
@@ -173,13 +186,13 @@ public class GameRunner : MonoBehaviour
     void Update()
     {
 
-        if( gameState.playState == PlayState.hasLost )
+        if( gameState.playState == PlayState.isLosing)
         {
             LoseGame();
             return;
         }
         else
-        if (gameState.playState == PlayState.hasWon)
+        if (gameState.playState == PlayState.isWinning)
         {
             WinGame();
             return;

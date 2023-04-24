@@ -6,6 +6,8 @@ public enum PlayState
 {
     notStarted,
     isPlaying,
+    isLosing,
+    isWinning,
     hasLost,
     hasWon
 }
@@ -24,7 +26,7 @@ public class GameState : MonoBehaviour
 
         if( playerHealth <= 0 )
         {
-            playState = PlayState.hasLost;
+            playState = PlayState.isLosing;
         }
 
     }

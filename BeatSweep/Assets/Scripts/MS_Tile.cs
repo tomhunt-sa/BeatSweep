@@ -17,8 +17,11 @@ public class MS_Tile : MonoBehaviour
     public GameObject MineGameObject;
 
     public GameObject PFTargetGameObject;
+    public GameObject FlagGameObject;
 
     public GameObject[] ConnectedMineCounterList;
+
+    
 
 
     public void InitTileView()
@@ -65,6 +68,7 @@ public class MS_Tile : MonoBehaviour
 
         //PFTargetGameObject.SetActive(node.isPathfinderTarget);
 
+        FlagGameObject.SetActive(node.isFlagged);
         ConnectedMineCounterList[node.numConnectedMines].SetActive( !node.isHidden);
 
 

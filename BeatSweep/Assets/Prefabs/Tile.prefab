@@ -259,6 +259,7 @@ MonoBehaviour:
   OpenTileGameObject: {fileID: 8274061898154239195}
   MineGameObject: {fileID: 4982647827617932725}
   PFTargetGameObject: {fileID: 4560186809529621982}
+  FlagGameObject: {fileID: 5323133573208212984}
   ConnectedMineCounterList:
   - {fileID: 6511433023740872162}
   - {fileID: 4154627074263570745}
@@ -949,6 +950,11 @@ PrefabInstance:
 --- !u!4 &4056002861481426353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8296506679197204377, guid: 87ea09a7731c3427191f719103bfe1ed, type: 3}
+  m_PrefabInstance: {fileID: 5434382137050858024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5323133573208212984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 195163360364136400, guid: 87ea09a7731c3427191f719103bfe1ed, type: 3}
   m_PrefabInstance: {fileID: 5434382137050858024}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5715933298254195550

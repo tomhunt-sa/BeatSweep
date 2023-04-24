@@ -30,6 +30,8 @@ public class Node
 
     public bool isPathfinderTarget = false;
 
+    public bool isFlagged = false;
+
     public Node(bool walkable, int gridX, int gridY)
     {        
         //this.worldPosition = worldPosition;
