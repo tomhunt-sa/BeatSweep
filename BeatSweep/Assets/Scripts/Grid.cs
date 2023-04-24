@@ -151,28 +151,24 @@ public class Grid : MonoBehaviour
     {
         List<Node> neighbors = new List<Node>();
 
-      
+
 
         // only check a cross here!
 
+        int x = node.gridX;
+        int y = node.gridY;
 
-        int checkXPlus = node.gridX++;
-        int checkXMinus = node.gridX--;
-        int checkYPlus = node.gridY++;
-        int checkYMinus = node.gridY--;
+        int checkXPlus = x+1;
+        int checkXMinus = x-1;
+        int checkYPlus = y+1;
+        int checkYMinus = y-1;
 
         int[] checks = new int[] { checkXPlus, checkXMinus, checkYPlus, checkYMinus };
 
-        //foreach (var check in checks)
-        //{
-        //    if (check >= 0 && check < gridSizeX && checkY >= 0 && checkY < gridSizeY)
-        //    {
-        //        neighbors.Add(grid[checkX, checkY]);
-        //    }
-        //}
-
-
-
+        if (checkXPlus < gridSizeX) neighbors.Add(grid[checkXPlus, y]);
+        if (checkXMinus >= 0) neighbors.Add(grid[checkXMinus, y]);
+        if (checkYPlus < gridSizeY) neighbors.Add(grid[x, checkYPlus]);
+        if (checkYMinus >= 0) neighbors.Add(grid[x, checkYMinus]);
 
 
         return neighbors;

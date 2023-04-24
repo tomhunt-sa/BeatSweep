@@ -18,7 +18,7 @@ public class GameRunner : MonoBehaviour
 
     
     public MS_Tile tileGameobject;
-    public MS_Character characterGameobject;
+    public MS_Character character;
 
     public GameState gameState;
     public Metronome metronome;
@@ -145,8 +145,7 @@ public class GameRunner : MonoBehaviour
                     furthestNode.isPathfinderTarget = true;
 
                     Node[] path = pathfinder.FindPath(grid.grid[0,0], furthestNode);
-
-                    Debug.Log(path);
+                    
                     if(path != null)
                     {
                         foreach (var pathnode in path)
@@ -154,7 +153,9 @@ public class GameRunner : MonoBehaviour
                             pathnode.isPathfinderTarget = true;
                         }
                     }
-                    
+
+
+                    character.WalkAlongPath(path);
 
                     UpdateGridView();
 
