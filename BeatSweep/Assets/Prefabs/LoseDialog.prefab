@@ -524,6 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameRunner: {fileID: 0}
   button: {fileID: 551090457236730070}
+  completePercentage: {fileID: 8238870177748494947}
 --- !u!1 &6143048504109835824
 GameObject:
   m_ObjectHideFlags: 0

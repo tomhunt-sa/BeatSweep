@@ -9,16 +9,14 @@ public class WinDialog : MonoBehaviour
     public GameRunner gameRunner;
     public Button button;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        button.onClick.AddListener(OnClickHandler);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnClickHandler()
     {
-        
+        gameRunner.StartGame();
     }
 }
