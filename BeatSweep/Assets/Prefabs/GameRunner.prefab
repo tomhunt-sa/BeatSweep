@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
   pathfinder: {fileID: 1422943570100246734}
-  startZoneSize: 5
-  endZoneSize: 5
+  startZoneSize: 1
+  endZoneSize: 1
   startingHealth: 100
   beatMissDamage: 5
   mineHitDamage: 20
