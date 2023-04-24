@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AStar : MonoBehaviour
+public class Astar : MonoBehaviour
 {
     public Grid grid;
 

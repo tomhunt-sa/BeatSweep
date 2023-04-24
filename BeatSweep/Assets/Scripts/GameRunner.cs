@@ -6,7 +6,7 @@ public class GameRunner : MonoBehaviour
 {
 
     public Grid grid;
-    public AStar pathfinder;
+    public Astar pathfinder;
     public int startZoneSize;
     public int endZoneSize;
     public int startingHealth;
