@@ -142,8 +142,10 @@ public class GameRunner : MonoBehaviour
 
 
                     Node furthestNode = grid.GetFurthestReachableNode();
+                    furthestNode.isPathfinderTarget = true;
 
                     Node[] path = pathfinder.FindPath(grid.grid[0,0], furthestNode);
+
                     Debug.Log(path);
                     if(path != null)
                     {

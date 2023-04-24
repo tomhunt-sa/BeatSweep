@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Node
 {
-    public bool walkable {
-        get {
-            return !isHidden;
-        }        
-    }
+    //public bool walkable {
+    //    get {
+    //        return !isHidden;
+    //    }        
+    //}
+
+    public bool walkable = true;
 
     public Vector3 worldPosition;
     public int gridX;

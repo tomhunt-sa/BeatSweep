@@ -21,7 +21,7 @@ public class MS_Character : MonoBehaviour
 
     public void MoveToNode( Node node )
     {
-
+        transform.position = new Vector3(  );
     }
 
 

@@ -172,6 +172,17 @@ public class Grid : MonoBehaviour
 
         // only check a cross here!
 
+
+        int checkXPlus = node.gridX++;
+        int checkXMinus = node.gridX--;
+        int checkYPlus = node.gridY++;
+        int checkYMinus = node.gridY--;
+
+        int[] checks = [ checkXPlus, checkXMinus, checkYPlus, checkYMinus ];
+
+
+
+
         return neighbors;
     }
 
