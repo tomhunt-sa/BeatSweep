@@ -23,6 +23,8 @@ public class GameRunner : MonoBehaviour
     public GameState gameState;
     public Metronome metronome;
 
+    public CameraMover cameraMover;
+
 
     public List<MS_Tile> tilesList;
 
@@ -102,9 +104,6 @@ public class GameRunner : MonoBehaviour
     }
     
 
-
-
-
     // Update is called once per frame
     void Update()
     {
@@ -161,8 +160,6 @@ public class GameRunner : MonoBehaviour
                     
 
                     UpdateGridView();
-
-
                     
                 }
             }
@@ -179,6 +176,8 @@ public class GameRunner : MonoBehaviour
             }
         }
 
+
+        cameraMover.MoveToNextScreen(character.GetPosition());
 
     }
 
