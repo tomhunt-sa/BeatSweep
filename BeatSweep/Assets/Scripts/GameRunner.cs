@@ -37,27 +37,46 @@ public class GameRunner : MonoBehaviour
     public int lastBeatHit;
     public int hitBeatCount;
 
+    public GameObject tilesContainer;
+
     // Start is called before the first frame update
     void Start()
     {
 
+        splashDialog.gameObject.SetActive(true);
+        winDialog.gameObject.SetActive(false);
+        loseDialog.gameObject.SetActive(false);
+
+    }
+
+
+    public void StartGame()
+    {
+
+        if(tilesContainer != null)
+        {
+            foreach( Transform t in tilesContainer.transform )
+            {
+                GameObject.Destroy(t.gameObject);
+            }
+        }
+
         tilesList = new List<MS_Tile>();
 
         grid.CreateGrid();
-        PopulateGrid();
+        PopulateGrid( tilesContainer );
 
         UpdateGridView();
 
         gameState.playerHealth = startingHealth;
 
         float center = Mathf.Round(grid.gridSizeX / 2.0f) - 1;
-        character.SetPosition( new Vector3( center, 0, 0 ) );
+        character.SetPosition(new Vector3(center, 0, 0));
         cameraMover.SetPositionX(center);
-
     }
 
 
-    void PopulateGrid()
+    void PopulateGrid( GameObject container )
     {
         for( int x=0; x<grid.gridSizeX; x++ )
         {
@@ -68,6 +87,7 @@ public class GameRunner : MonoBehaviour
                 GameObject tile = Instantiate(tileGameobject.gameObject);
                 tile.transform.position = new Vector3(x, 0, y);
                 tile.name = string.Format("x:{0} y:{1}", x, y);
+                tile.transform.SetParent(container.transform);
 
                 MS_Tile msTile = tile.GetComponent<MS_Tile>();
                 Node node = grid.grid[x, y];
