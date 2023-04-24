@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIUpdater : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIUpdater : MonoBehaviour
     public GameState gameState;
 
     public TMP_Text healthText;
+    public Slider healthSlider;
     public TempoBar tempoBar;
     
     public SpriteStackProgress TempoSpriteStackProgress;
@@ -41,6 +43,10 @@ public class UIUpdater : MonoBehaviour
     {
         
         healthText.text = gameState.playerHealth.ToString();
+
+        if (healthSlider)
+            healthSlider.value = 1.0f - Mathf.Clamp01(gameState.playerHealth / 100.0f);
+        
         tempoBar.SetScale( gameRunner.metronome.beatProgress );
 
         if (prevBeatProgress < pulsePunchTrigger && gameRunner.metronome.beatProgress >= pulsePunchTrigger)
