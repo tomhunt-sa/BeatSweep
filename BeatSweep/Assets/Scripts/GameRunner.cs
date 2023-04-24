@@ -111,16 +111,16 @@ public class GameRunner : MonoBehaviour
     public void LoseGame()
     {
         Debug.Log("LOSE!!");
-        StartCoroutine(ShowLoseDialog());
+        gameState.playState = PlayState.hasLost;
         metronome.StopMetronome();
         sfx.PlayLoseSFX();
+        StartCoroutine(ShowLoseDialog());        
     }
 
     public IEnumerator ShowLoseDialog()
     {
         yield return new WaitForSeconds(1);        
-
-        gameState.playState = PlayState.hasLost;
+        
 
         ResetGame();
         Node currentNode = grid.NodeFromWorldPoint(character.GetPosition());
