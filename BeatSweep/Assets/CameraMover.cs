@@ -27,12 +27,12 @@ public class CameraMover : MonoBehaviour
         int target = (int)targetPosition.z;
 
 
-        Debug.Log(string.Format("{0}, {1}", target, cutoff));
+        //Debug.Log(string.Format("{0}, {1}", target, cutoff));
 
         if( target > cutoff )
         {
             //Vector3 newPosition = startPosition + new Vector3(0, 0, (float)(target-bottomBuffer));
-            transform.DOMoveZ(startPosition.z + (float)(target - bottomBuffer), speed, true);
+            transform.DOMoveZ(startPosition.z + (float)(target - bottomBuffer), speed );
             lastPosition = target - bottomBuffer;
         }
 
