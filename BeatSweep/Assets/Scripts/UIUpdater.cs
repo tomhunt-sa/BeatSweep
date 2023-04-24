@@ -45,7 +45,7 @@ public class UIUpdater : MonoBehaviour
         healthText.text = gameState.playerHealth.ToString();
 
         if (healthSlider)
-            healthSlider.value = 1.0f - Mathf.Clamp01((float)gameState.playerHealth / gameRunner.startingHealth);
+            healthSlider.value = Mathf.Clamp01((float)gameState.playerHealth / gameRunner.startingHealth);
         
         tempoBar.SetScale( gameRunner.metronome.beatProgress );
 
