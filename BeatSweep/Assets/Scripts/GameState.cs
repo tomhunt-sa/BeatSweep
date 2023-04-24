@@ -20,7 +20,7 @@ public class GameState : MonoBehaviour
     public int playerHealth;
     public PlayState playState = PlayState.notStarted;
 
-    public Action<bool> OnTakeDamage; 
+    public static Action<bool> OnTakeDamage; 
 
     public void takeDamage( int amount, bool fromMine )
     {

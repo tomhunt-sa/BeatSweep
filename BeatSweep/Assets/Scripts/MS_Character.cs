@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+public enum CharacterState
+{
+    Walk,
+    FallOver
+}
+
 public class MS_Character : MonoBehaviour
 {
     [SerializeField] private SpriteAnimator spriteAnimator;
@@ -14,6 +20,8 @@ public class MS_Character : MonoBehaviour
 
     public float speed;
 
+    public CharacterState State; 
+    
     public SpriteAnimationClip walkClip;
     public SpriteAnimationClip fallOverClip;
     
@@ -28,14 +36,12 @@ public class MS_Character : MonoBehaviour
     {
         gameState = FindObjectOfType<GameState>();
 
-        if (gameState)
-            gameState.OnTakeDamage += OnTakeDamage;
+        GameState.OnTakeDamage += OnTakeDamage;
     }
 
     private void OnDestroy()
     {
-        if (gameState)
-            gameState.OnTakeDamage -= OnTakeDamage;
+        GameState.OnTakeDamage -= OnTakeDamage;
     }
 
     private void OnTakeDamage(bool fromMine)
@@ -58,11 +64,31 @@ public class MS_Character : MonoBehaviour
         if (damagedTimer >= 0)
         {
             damagedTimer -= Time.deltaTime;
-            spriteAnimator.Clip = fallOverClip;
+            SetState(CharacterState.FallOver);
             return;
         }
+
+        SetState(gameState.playerHealth > 0 ? CharacterState.Walk : CharacterState.FallOver);
+    }
+
+    private void SetState(CharacterState state)
+    {
+        if (this.State == state)
+            return;
+
+        State = state;
         
-        spriteAnimator.Clip = gameState.playerHealth > 0 ? walkClip : fallOverClip;
+        switch (state)
+        {
+            case CharacterState.Walk:
+                spriteAnimator.Clip = walkClip;
+                break;
+            case CharacterState.FallOver:
+                spriteAnimator.Clip = fallOverClip;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(state), state, null);
+        }
     }
 
     public void MoveToNode( Node node )
