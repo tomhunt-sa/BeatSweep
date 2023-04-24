@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class SplashDialog : MonoBehaviour
 {
-
     public GameRunner gameRunner;
     public Button button;
 
@@ -20,6 +16,4 @@ public class SplashDialog : MonoBehaviour
     {
         gameRunner.StartGame();
     }
-
-
 }
