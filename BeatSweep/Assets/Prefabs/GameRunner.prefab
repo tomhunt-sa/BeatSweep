@@ -57,9 +57,10 @@ MonoBehaviour:
   beatTolerance: 1
   chanceOfMine: 0.2
   tileGameobject: {fileID: 6202098652496452214, guid: 1df1cf35bae1b42f996b663722c2fbbe, type: 3}
-  characterGameobject: {fileID: 458161445380722872, guid: 1501c92e2a97d4532a8804666aa9d52f, type: 3}
+  character: {fileID: 0}
   gameState: {fileID: 1422943570100246729}
   metronome: {fileID: 1422943570100246728}
+  cameraMover: {fileID: 0}
   tilesList: []
   lastBeatHit: 0
 --- !u!114 &1422943570100246729
