@@ -12,6 +12,7 @@ public class CameraMover : MonoBehaviour
     public float speed;
 
     private int lastPosition;
+    private int moveCount;
 
     private Vector3 startPosition;
 
@@ -33,10 +34,11 @@ public class CameraMover : MonoBehaviour
         {
             //Vector3 newPosition = startPosition + new Vector3(0, 0, (float)(target-bottomBuffer));
             transform.DOMoveZ(startPosition.z + (float)(target - bottomBuffer), speed );
-            lastPosition = target - bottomBuffer;
+            lastPosition = target - bottomBuffer - (bottomBuffer * (moveCount-1));
+            moveCount++;
         }
 
-
+        
 
     }
 

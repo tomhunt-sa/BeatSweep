@@ -97,6 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8764873cb454347b4bf8c659c7e96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleTiles: 8
+  visibleTiles: 4
   bottomBuffer: 2
   speed: 1
