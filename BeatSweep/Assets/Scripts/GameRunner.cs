@@ -43,6 +43,10 @@ public class GameRunner : MonoBehaviour
 
         gameState.playerHealth = startingHealth;
 
+        float center = Mathf.Round(grid.gridSizeX / 2.0f) - 1;
+        character.SetPosition( new Vector3( center, 0, 0 ) );
+        cameraMover.SetPositionX(center);
+
     }
 
 

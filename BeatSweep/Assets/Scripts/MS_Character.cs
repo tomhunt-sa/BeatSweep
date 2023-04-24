@@ -49,4 +49,10 @@ public class MS_Character : MonoBehaviour
     }
 
 
+    public void SetPosition( Vector3 target )
+    {
+        transform.position = target;
+    }
+
+
 }

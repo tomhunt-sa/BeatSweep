@@ -37,12 +37,12 @@ public class CameraMover : MonoBehaviour
             lastPosition = target - bottomBuffer - (bottomBuffer * (moveCount-1));
             moveCount++;
         }
-
-        
-
     }
 
-  
+    public void SetPositionX( float targetX )
+    {
+        transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
+    }
 
 
 }
