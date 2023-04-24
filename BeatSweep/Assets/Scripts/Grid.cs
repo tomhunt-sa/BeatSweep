@@ -178,7 +178,8 @@ public class Grid : MonoBehaviour
         int checkYPlus = node.gridY++;
         int checkYMinus = node.gridY--;
 
-        int[] checks = [ checkXPlus, checkXMinus, checkYPlus, checkYMinus ];
+        //int[] checks = [ checkXPlus, checkXMinus, checkYPlus, checkYMinus ];
+
 
 
 
