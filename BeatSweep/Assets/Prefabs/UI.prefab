@@ -712,7 +712,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e73dd0cce7a4167a7e8fe82afe3949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatColor: {r: 0.8584906, g: 0.34420612, b: 0.34420612, a: 1}
+  beatColor: {r: 0.75, g: 0.045, b: 0.045, a: 1}
+  beatColorLerpDuration: 0
   hueStep: 0.1
 --- !u!1 &4711250515360049717
 GameObject:
