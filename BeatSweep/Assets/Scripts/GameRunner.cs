@@ -49,19 +49,28 @@ public class GameRunner : MonoBehaviour
 
     }
 
-
-    public void StartGame()
+    public void ResetGame()
     {
-
-        splashDialog.gameObject.SetActive(false);
-
+        Debug.Log("RESET");
         if (tilesContainer != null)
         {
-            foreach( Transform t in tilesContainer.transform )
+            foreach (Transform t in tilesContainer.transform)
             {
                 GameObject.Destroy(t.gameObject);
             }
         }
+
+        gameState.playState = PlayState.notStarted;
+    }
+
+
+    public void StartGame()
+    {
+
+        Debug.Log("STARTING GAME");
+        splashDialog.gameObject.SetActive(false);
+        winDialog.gameObject.SetActive(false);
+        loseDialog.gameObject.SetActive(false);
 
         tilesList = new List<MS_Tile>();
 
@@ -75,7 +84,30 @@ public class GameRunner : MonoBehaviour
         float center = Mathf.Round(grid.gridSizeX / 2.0f) - 1;
         character.SetPosition(new Vector3(center, 0, 0));
         cameraMover.SetPositionX(center);
+
+        gameState.playState = PlayState.isPlaying;
     }
+
+    public void WinGame()
+    {
+        Debug.Log("WIN!!");
+        ResetGame();
+    }
+
+    public void LoseGame()
+    {
+        Debug.Log("LOSE!!");
+        ResetGame();
+        Node currentNode = grid.NodeFromWorldPoint(character.GetPosition());
+        int nodeY = currentNode.gridY;
+        int percent = (int)(((float)nodeY / (float)grid.gridSizeY) * 100);
+
+        //Debug.Log(string.Format("{0} {1} {2}", nodeY, grid.gridSizeY, percent ));
+
+        loseDialog.gameObject.SetActive(true);
+        loseDialog.SetPercentageComplete(percent);
+    }
+
 
 
     void PopulateGrid( GameObject container )
@@ -140,6 +172,24 @@ public class GameRunner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if( gameState.playState == PlayState.hasLost )
+        {
+            LoseGame();
+            return;
+        }
+        else
+        if (gameState.playState == PlayState.hasWon)
+        {
+            WinGame();
+            return;
+        }
+        else
+        if(gameState.playState == PlayState.notStarted)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;

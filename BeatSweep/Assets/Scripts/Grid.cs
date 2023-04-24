@@ -136,7 +136,7 @@ public class Grid : MonoBehaviour
                 {
 
              
-                    Debug.Log(string.Format("{0} {1}", x, y));
+                    //Debug.Log(string.Format("{0} {1}", x, y));
                     //nodeForInspection.isPathfinderTarget = true;
                     return nodeForInspection;
                 }
